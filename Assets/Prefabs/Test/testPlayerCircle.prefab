@@ -82,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8676729183022518062, guid: 1421a8ecf1dbf3e4f8d5a4d2733e8823, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -129,7 +129,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.4
 --- !u!50 &-2202917433903736205
 Rigidbody2D:
   serializedVersion: 5
