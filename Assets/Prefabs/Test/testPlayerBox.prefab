@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1447081851637358290}
   - component: {fileID: 8352965571321288359}
+  - component: {fileID: 5103503411967823329}
   - component: {fileID: 162742341110056}
   - component: {fileID: 1409894836935542355}
-  - component: {fileID: 2252184149499923843}
   m_Layer: 0
   m_Name: testPlayerBox
   m_TagString: Player
@@ -94,6 +94,29 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &5103503411967823329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6217605777061047946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4d80a13109a1042928cb53640fe3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  movement: {x: 0, y: 0, z: 0}
+  rotatemovement: {x: 0, y: 0, z: 0}
+  groundlayer:
+    serializedVersion: 2
+    m_Bits: 64
+  boxprefab: {fileID: 815261855891981148, guid: a7bd8b7c1bb936647a91e614f68e8eb9, type: 3}
+  player: {fileID: 6217605777061047946}
+  moveSpeed: 5
+  power: 5
+  rotateSpeed: 100
+  isGround: 1
 --- !u!61 &162742341110056
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,7 +178,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -167,16 +190,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2252184149499923843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6217605777061047946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61a18db1ac1d0104f9aeee919a547f18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TestFollowMouse
-  moveSpeed: 100

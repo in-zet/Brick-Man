@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2334689158334109912}
   - component: {fileID: 4693465075954854681}
   - component: {fileID: 1363963838296204065}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cloneBox
-  m_TagString: Untagged
+  m_TagString: CloneBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
