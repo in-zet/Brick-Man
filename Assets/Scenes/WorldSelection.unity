@@ -354,7 +354,7 @@ MonoBehaviour:
   contentTrans: {fileID: 1014469692}
   slotTrans: {fileID: 81976460}
   hlg: {fileID: 1014469693}
-  snapSpeed: 1
+  snapTime: 1
 --- !u!1 &255726313
 GameObject:
   m_ObjectHideFlags: 0
