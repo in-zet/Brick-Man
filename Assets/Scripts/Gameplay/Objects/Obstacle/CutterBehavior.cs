@@ -9,7 +9,6 @@ public class CutterBehavior : MonoBehaviour
     public float moveSpeed = 3f;  // 이동 속도
     public float waitTime = 1f;   // 대기 시간
 
-
     private Vector3 startPos;
     private Vector3 endPos;
 
@@ -24,7 +23,10 @@ public class CutterBehavior : MonoBehaviour
         }
     }
 
-    public void toggleMovement()
+    /// <summary>
+    /// 절단기의 이동을 온/오프 토글
+    /// </summary>
+    public void ToggleMovement()
     {
         isMove = !isMove;
 
@@ -38,7 +40,8 @@ public class CutterBehavior : MonoBehaviour
         }
     }
 
-    IEnumerator MoveRoutine()
+    // 왔다 가는 이동을 담당하는 코루틴
+    private IEnumerator MoveRoutine()
     {
         while (true)
         {
@@ -50,7 +53,7 @@ public class CutterBehavior : MonoBehaviour
     }
 
     // 실제 이동을 담당하는 하위 코루틴
-    IEnumerator MoveToTarget(Vector3 target)
+    private IEnumerator MoveToTarget(Vector3 target)
     {
         // 목표에 도달할 때까지 반복
         while (Vector3.Distance(transform.position, target) > 0.01f)
@@ -65,7 +68,7 @@ public class CutterBehavior : MonoBehaviour
         transform.position = target;
     }
     
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag(PLAYER_TAG))
         {
