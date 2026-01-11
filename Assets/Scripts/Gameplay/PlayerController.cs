@@ -55,7 +55,6 @@ public class PlayerController : MonoBehaviour
     {
         inputhandler = GameObject.Find("InputHandler").GetComponent<InputHandler>();
         rb = GetComponent<Rigidbody2D>();
-        rb.freezeRotation = true;  //idle 상태일 때 player 회전 차단
     }
 
     // Update is called once per frame
@@ -198,19 +197,14 @@ public class PlayerController : MonoBehaviour
     }
 
     //땅에 닿는 판정인지 확인
-    
+    //Raycast 사용하여 player의 수직 아래로 레이어 발사, 물체에 닿으면 땅에 닿는다 판정
+    //닿은 물체의 Layer가 Ground일 때만 판정, 판정하려는 물체의 Layer 확인!!
     private void CheckGround() { 
-        Collider2D col = GetComponent<Collider2D>();
-        Vector2 boxSize = new Vector2(col.bounds.size.x * 0.9f, 0.1f);
-        
-        // 박스를 쏠 위치 (발바닥 지점) 및 거리
-        Vector2 castOrigin = (Vector2)transform.position + Vector2.down * (col.bounds.extents.y);
-        float castDistance = 0.1f;
-
-        // 아래 방향으로 박스를 쏴서 바닥 레이어와 충돌하는지 확인
-        RaycastHit2D hit = Physics2D.BoxCast(castOrigin, boxSize, 0f, Vector2.down, castDistance, groundlayer);
+        float distance = DistanceToFoot()+0.1f;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, distance, groundlayer);
 
         if (hit.collider != null) {
+            
             isGround = true;
             //땅에 닿으면 Idle로 상태변경
             if (currentstate == PlayerState.Leviating) { 
@@ -225,30 +219,8 @@ public class PlayerController : MonoBehaviour
             }
         }
         
-        
-        // float distance = DistanceToFoot()+0.1f;
-        // RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, distance, groundlayer);
-
-        // if (hit.collider != null) {
-            
-        //     isGround = true;
-        //     //땅에 닿으면 Idle로 상태변경
-        //     if (currentstate == PlayerState.Leviating) { 
-        //         ChangeState(PlayerState.Idle);
-        //     }
-        // }
-        // else {
-        //     //땅에서 떨어지면 Leviating으로 상태변경
-        //     isGround = false;
-        //     if (currentstate == PlayerState.Idle) { 
-        //         ChangeState(PlayerState.Leviating);
-        //     }
-        // }
-        
-        // // 에디터 뷰에서 레이저가 나가는지 확인용
-        // Debug.DrawRay(transform.position, Vector3.down * distance, Color.red);
-        //Raycast 사용하여 player의 수직 아래로 레이어 발사, 물체에 닿으면 땅에 닿는다 판정
-        //닿은 물체의 Layer가 Ground일 때만 판정, 판정하려는 물체의 Layer 확인!!
+        // 에디터 뷰에서 레이저가 나가는지 확인용
+        Debug.DrawRay(transform.position, Vector3.down * distance, Color.red);
     }
 
     // 중심점에서 발바닥까지의 거리
