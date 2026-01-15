@@ -76,8 +76,7 @@ public class CutterBehavior : MonoBehaviour
             Debug.Log("죽음");
 
             // 절단기에 닿았을 때 처리
-            // collision.collider.gameObject.GetComponent<PlayerController>().Death();
-            
+            collision.collider.gameObject.GetComponent<PlayerController>().Death();
         }
     }
 }

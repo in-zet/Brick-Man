@@ -3,22 +3,17 @@ using System.Collections;
 using Unity.Cinemachine;
 
 /// <summary>
-/// 게임의 전체 상태(로비, 인게임, 일시정지) 관리
+/// 레벨이 아닌 게임의 전체 상태(로비, 인게임, 일시정지) 관리
 /// <para>게임 전체 전역 싱글톤</para>
 /// </summary>
 public class GameManager : Singleton<GameManager>
 {
-    PlayerController playercontroller;
-    
     public enum GameState
     {
-        Main, WorldSelection, LevelSelection, Level, MapEditor
+        Main, WorldSelection, LevelSelection, Level
     }
 
     public GameState CurrentState { get; private set; } = GameState.Main;
-
-    public GameObject playerPrefab; // 프로젝트 창의 Player 프리팹 할당
-    public Vector3 spawnPosition;
 
     public void ChangeState(GameState newState)
     {
@@ -29,31 +24,33 @@ public class GameManager : Singleton<GameManager>
         Debug.Log($"Game State changed to: {CurrentState}");
     }
 
-    //PlayerController에서 사용
-    //플레이어가 사망했을때 호출됨
-    public void RequestRespawn() {
-
-        StartCoroutine(RespawnRoutine());
+    public void GotoMainMenu()
+    {
+        ChangeState(GameState.Main);
+        // 메인 메뉴로 전환하는 로직 추가
     }
 
-    private IEnumerator RespawnRoutine() {
-        // 1초 대기
-        yield return new WaitForSeconds(1.0f);
-
-        // 새 플레이어 생성
-        GameObject newPlayer = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
-        newPlayer.tag = "Player";
-
-        //카메라 로직
-        var vcam = GameObject.FindAnyObjectByType<CinemachineCamera>();
-        if (vcam != null)
-        {
-            // 플레이어가 리스폰 하면 새로운 플레이어를 따라가도록
-            vcam.Target.TrackingTarget = newPlayer.transform; 
-        }
-        
-        Debug.Log("Player Respawned");
+    public void GotoWorldSelection()
+    {
+        ChangeState(GameState.WorldSelection);
+        // 월드 선택 화면으로 전환하는 로직 추가
     }
 
-    // 추가적인 게임 관리 기능들
+    public void GotoLevelSelection()
+    {
+        ChangeState(GameState.LevelSelection);
+        // 레벨 선택 화면으로 전환하는 로직 추가
+    }
+
+    public void GotoLevel()
+    {
+        ChangeState(GameState.Level);
+        // 레벨로 전환하는 로직 추가
+    }
+
+    public void ExitLevel()
+    {
+        ChangeState(GameState.LevelSelection);
+        // 레벨 마친 후 레벨 선택 화면으로 전환하는 로직 추가
+    }
 }

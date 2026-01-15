@@ -163,10 +163,16 @@ public class PlayerController : MonoBehaviour
         Respawn(); //리스폰
     }
 
+    //Death 함수
+    public void Death() {
+        Destroy(gameObject); //플레이어 제거
+        Respawn(); //리스폰
+    }
+
     //respawn 함수, Idle로 상태 변화
-    //GameManager에 리스폰 요청
+    //LevelManager에 리스폰 요청
     private void Respawn() { 
-        GameManager.Instance.RequestRespawn();
+        LevelManager.Instance.RequestRespawn();
         ChangeState(PlayerState.Idle);
     }
 

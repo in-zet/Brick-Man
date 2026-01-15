@@ -16,7 +16,7 @@ public class SpikeBehavior : MonoBehaviour
             Debug.Log("죽음");
 
             // 가시에 닿았을 때 처리
-            // collision.collider.gameObject.GetComponent<PlayerController>().Death();
+            collision.collider.gameObject.GetComponent<PlayerController>().Death();
 
         }
     }
