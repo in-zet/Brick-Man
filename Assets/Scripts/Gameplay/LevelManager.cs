@@ -32,9 +32,7 @@ public class LevelManager : Singleton<LevelManager>
         spawnPosition = startPosition;
 
         // 플레이어 생성
-        GameObject player = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
-        player.tag = PLAYER_TAG;
-        playerController = player.GetComponent<PlayerController>();
+        RequestRespawn();
 
         collectedStars = 0;
         currentLevelState = LevelState.Play;
