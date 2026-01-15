@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using static Constants;
+using Unity.Cinemachine;
 
 /// <summary>
 /// 레벨의 상태(준비, 진행 중, 완료, 실패) 관리
@@ -42,6 +43,14 @@ public class LevelManager : Singleton<LevelManager>
     }
 
     /// <summary>
+    /// 임시 테스트 용, 레벨 씬을 곧바로 실행하지 않는 환경에서는 쓰지 않음
+    /// </summary>
+    void Awake()
+    {
+        Init_Level();
+    }
+
+    /// <summary>
     /// 플레이어 리스폰 요청
     /// <para>1초 대기 후 스폰 지점에 새 플레이어 생성</para>
     /// </summary>
@@ -60,6 +69,14 @@ public class LevelManager : Singleton<LevelManager>
         newPlayer.tag = PLAYER_TAG;
         playerController = newPlayer.GetComponent<PlayerController>();
         Debug.Log("Player Respawned");
+
+        //카메라 로직
+        var vcam = GameObject.FindAnyObjectByType<CinemachineCamera>();
+        if (vcam != null)
+        {
+            // 플레이어가 리스폰 하면 새로운 플레이어를 따라가도록
+            vcam.Target.TrackingTarget = newPlayer.transform; 
+        }
     }
 
     /// <summary>

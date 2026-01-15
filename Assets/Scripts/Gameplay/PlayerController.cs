@@ -163,21 +163,12 @@ public class PlayerController : MonoBehaviour
         Respawn(); //리스폰
     }
 
-    //Death 함수
-    public void Death() {
-        Destroy(gameObject); //플레이어 제거
-        Respawn(); //리스폰
-    }
-
     //respawn 함수, Idle로 상태 변화
     //LevelManager에 리스폰 요청
     private void Respawn() { 
         LevelManager.Instance.RequestRespawn();
         ChangeState(PlayerState.Idle);
     }
-
-
-
 
     //플레이어가 가시에 닿을 시 플레이어제거, Death로 상태 변화, 리스폰(플레이어 제거보다 먼저호출)
     private void OnCollisionEnter2D(Collision2D collision) {
