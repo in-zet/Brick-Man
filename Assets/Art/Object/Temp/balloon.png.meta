@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 98383d5c5c3b02b4789c63a320d871bb
+guid: f7c8009712ab97942b389ba9a04a8c55
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6694082402880465256
-    second: chisel_0
+      213: 3499272959063439820
+    second: balloon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chisel_0
+      name: balloon_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 32
-        height: 32
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 896dd177587d913a0800000000000000
-      internalID: -6694082402880465256
+      spriteID: cc93b11673aef8030800000000000000
+      internalID: 3499272959063439820
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e37103b3d6944c94e877d3dbad72589c
+    spriteID: fef4dfd710c526c41aba6deb4703eaaf
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      chisel_0: -6694082402880465256
+      balloon_0: 3499272959063439820
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,11 +1,15 @@
 using UnityEditor.UI;
 using UnityEngine;
 using static Constants;
+using Unity.Cinemachine;
+using UnityEngine;
 
 public class FlagBehavior : MonoBehaviour
 {
-    Collider2D flagCollider;
-    
+    private Collider2D flagCollider;
+
+    public GameObject flag_enablePrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +24,10 @@ public class FlagBehavior : MonoBehaviour
 
             LevelManager.Instance.SetSpawnPoint(transform.position);
             flagCollider.enabled = false;
+            Destroy(gameObject);
+
+            // flag_enable로 교체
+            Instantiate(flag_enablePrefab, transform.position, Quaternion.identity);
         }
     }
 }

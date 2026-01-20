@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 98383d5c5c3b02b4789c63a320d871bb
+guid: bc740563b3fda4147a3de3bec548cc28
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6694082402880465256
-    second: chisel_0
+      213: -9033362865147394225
+    second: hook_anchor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chisel_0
+      name: hook_anchor_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 32
-        height: 32
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 896dd177587d913a0800000000000000
-      internalID: -6694082402880465256
+      spriteID: f474fafb55c03a280800000000000000
+      internalID: -9033362865147394225
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e37103b3d6944c94e877d3dbad72589c
+    spriteID: 986dcb2bb16fa5b4994ce63d290cfb18
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      chisel_0: -6694082402880465256
+      hook_anchor_0: -9033362865147394225
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
