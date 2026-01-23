@@ -11,6 +11,8 @@ public class InputHandler : MonoBehaviour
     //move 입력받고 Flip상태가 아닐때만 값 넘겨주기
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (playercontroller == null) return; //01.24 정수민 inputhandler 오류 제거
+        
         //Play 상태가 아니면 input 받지 않음
         if(LevelManager.Instance.currentLevelState != LevelManager.LevelState.Play) return;
 
@@ -31,6 +33,8 @@ public class InputHandler : MonoBehaviour
     //jump 입력받고 땅에 닿았을 때만 jump 실행
     public void OnJump(InputAction.CallbackContext context)
     { 
+        if (playercontroller == null) return; //01.24 정수민 inputhandler 오류 제거
+        
         //Play 상태가 아니면 input 받지 않음
         if(LevelManager.Instance.currentLevelState != LevelManager.LevelState.Play) return;
 
@@ -52,6 +56,8 @@ public class InputHandler : MonoBehaviour
     //Flip 입력받기
     public void OnFlip(InputAction.CallbackContext context)
     {
+        if (playercontroller == null) return; //01.24 정수민 inputhandler 오류 제거
+        
         //Play 상태가 아니면 input 받지 않음
         if(LevelManager.Instance.currentLevelState != LevelManager.LevelState.Play) return;
 
@@ -69,6 +75,8 @@ public class InputHandler : MonoBehaviour
     //Rotate 입력받기
     public void OnRotate(InputAction.CallbackContext context) 
     {
+        if (playercontroller == null) return; //01.24 정수민 inputhandler 오류 제거
+        
         //Play 상태가 아니면 input 받지 않음
         if(LevelManager.Instance.currentLevelState != LevelManager.LevelState.Play) return;
 
@@ -90,6 +98,8 @@ public class InputHandler : MonoBehaviour
     //MakeBrick 입력받기
     public void OnMakeBrick(InputAction.CallbackContext context) 
     {
+        if (playercontroller == null) return; //01.24 정수민 inputhandler 오류 제거
+        
         //Play 상태가 아니면 input 받지 않음
         if(LevelManager.Instance.currentLevelState != LevelManager.LevelState.Play) return;
 
