@@ -46,8 +46,12 @@ public class LevelManager : Singleton<LevelManager>
     /// <summary>
     /// 임시 테스트 용, 레벨 씬을 곧바로 실행하지 않는 환경에서는 쓰지 않음
     /// </summary>
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();  //01.23 정수민 오류 수정
+        // 만약 이 오브젝트가 중복이라서 부모에 의해 파괴될 예정이라면, 
+        // 아래의 초기화 로직을 실행하지 않고 즉시 중단
+        if (Instance != this) return;
         Init_Level();
     }
 
