@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class LvlSceneChanger : BaseSceneChanger
@@ -8,8 +9,7 @@ public class LvlSceneChanger : BaseSceneChanger
     //레벨 나가기
     public void OnClickedQuit()
     {
-        Time.timeScale = 1f;
-        
-        ChangeScene(nextScenes[1]);
+        //정지 풀기가 ChangeScene 안에 있음
+        ChangeScene(nextScenes[1], 0.5f);
     }
 }
