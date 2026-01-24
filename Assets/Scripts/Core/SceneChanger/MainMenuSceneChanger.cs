@@ -5,6 +5,11 @@ using UnityEngine;
 //<summary>
 public class MainMenuSceneChange : BaseSceneChanger
 {
+    protected override void Awake()
+    {
+        //fade in 실행 안하기
+    }
+
     //게임 시작 버튼
     public void OnClickedStart()
     {
