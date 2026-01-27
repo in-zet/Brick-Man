@@ -551,6 +551,7 @@ MonoBehaviour:
   - TutorialScene
   - stage2
   - stage3
+  - stage4
   - challengestage
   transitionUI: {fileID: 1253843453}
   graphicRaycaster: {fileID: 1253843452}
@@ -651,7 +652,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 370924983}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359990278}
+        m_TargetAssemblyTypeName: LvlSelectSceneChanger, Assembly-CSharp
+        m_MethodName: OnClickedLvl
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &370924983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2300,7 +2313,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

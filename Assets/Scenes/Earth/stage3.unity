@@ -20067,7 +20067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LvlSceneChanger
   nextScenes:
-  - challengestage
+  - stage4
   - LevelSelection
   transitionUI: {fileID: 1355516581}
   graphicRaycaster: {fileID: 1355516580}
